@@ -1,11 +1,15 @@
 import React from 'react'
-import { Heading } from '@chakra-ui/react'
+import MainSection from '../components/MainSection'
+import About from '../components/About'
+import Header from '../components/Header'
 
 const App = () => {
   return (
-      <Heading color='brand.900'>
-        Projeto-base Next.js | TypeScript | Chakra UI
-      </Heading>
+        <>
+            <Header/>
+            <MainSection/>
+            <About/>
+        </>
   )
 }
 
