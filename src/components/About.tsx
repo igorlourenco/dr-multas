@@ -8,33 +8,27 @@ import {
   Button,
   Stack
 } from '@chakra-ui/react'
+import { aboutButtonMessage, aboutText, aboutTitle, aboutImage, brandColor } from '../consts'
 
 const About = () => {
   return (
         <Container maxW={'6xl'}>
             <SimpleGrid py={8} px={4} spacing={6} columns={{ base: 1, md: 2 }}>
                 <Stack spacing={8} maxW={{ md: 'xl' }}>
-                    <Heading size={'2xl'}>
-                        This is the{' '}
-                        <Text as={'span'} color={'blue.500'}>
-                            main headline
-                        </Text>
+                    <Heading size={'2xl'} color={`${brandColor}.700`}>
+                        {aboutTitle}
                     </Heading>
                     <Text fontSize={'xl'} color={'gray.500'}>
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-                        erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-                        et ea rebum.
+                        {aboutText}
                     </Text>
                     <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
-                        <Button colorScheme={'blue'}>Primary Action</Button>
-                        <Button>Secondary Action</Button>
+                        <Button variant={'outline'} colorScheme={brandColor}>{aboutButtonMessage}</Button>
                     </Stack>
                 </Stack>
 
                 <Flex alignItems={'center'} justifyContent={'center'}>
                     <img
-                        src={'https://via.placeholder.com/400x250'}
+                        src={aboutImage}
                         width={400}
                         height={250}
                     />

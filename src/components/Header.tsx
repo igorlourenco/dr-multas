@@ -7,6 +7,7 @@ import {
   Link,
   Text,
   Button,
+  Heading,
   Menu,
   MenuButton,
   MenuList,
@@ -33,7 +34,7 @@ const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
-        <Box bg={'transparent'} px={4}>
+        <Box bg={'gray.200'} px={4}>
             <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
                 <Text
                     size={'md'}
@@ -42,7 +43,7 @@ const Header = () => {
                     onClick={isOpen ? onClose : onOpen}
                 >X</Text>
                 <HStack spacing={8} alignItems={'center'}>
-                    <Box>Logo</Box>
+                    <Box><Heading size={'mds'}>DoutorMultas.com</Heading></Box>
                     <HStack
                         as={'nav'}
                         spacing={4}
