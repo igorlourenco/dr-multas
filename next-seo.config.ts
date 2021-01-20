@@ -1,6 +1,6 @@
 const title =
-    'Doutor Multas'
-const description = 'ESPECIALISTA EM DEFESAS E RECURSOS DE MULTAS DE TRÂNSITO.'
+    'Doutor Multas - Palmas, Tocantins'
+const description = 'ESPECIALISTA EM DEFESAS E RECURSOS DE MULTAS DE TRÂNSITO EM PALMAS, TOCANTINS.'
 
 const SEO = {
   title,
