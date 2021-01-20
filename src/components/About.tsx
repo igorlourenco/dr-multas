@@ -3,38 +3,28 @@ import {
   SimpleGrid,
   Flex,
   Heading,
-  Container,
+  BoxProps,
   Text,
   Button,
-  Stack
+  Stack, Box
 } from '@chakra-ui/react'
-import { aboutButtonMessage, aboutText, aboutTitle, aboutImage, brandColor } from '../consts'
+import { aboutButtonMessage, aboutText, aboutTitle, brandColor, instagramLink } from '../consts'
 
-const About = () => {
+const About = (props: BoxProps) => {
   return (
-        <Container maxW={'6xl'}>
-            <SimpleGrid py={8} px={4} spacing={6} columns={{ base: 1, md: 2 }}>
-                <Stack spacing={8} maxW={{ md: 'xl' }}>
-                    <Heading size={'2xl'} color={`${brandColor}.700`}>
-                        {aboutTitle}
-                    </Heading>
-                    <Text fontSize={'xl'} color={'gray.500'}>
-                        {aboutText}
-                    </Text>
-                    <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
-                        <Button variant={'outline'} colorScheme={brandColor}>{aboutButtonMessage}</Button>
-                    </Stack>
-                </Stack>
-
-                <Flex alignItems={'center'} justifyContent={'center'}>
-                    <img
-                        src={aboutImage}
-                        width={400}
-                        height={250}
-                    />
-                </Flex>
-            </SimpleGrid>
-        </Container>
+      <Box display={'flex'} justifyContent={'center'} alignItems={'center'} {...props} py={6}>
+          <Stack spacing={8} padding={[10, 8, 7, 2]} width={['100vw', '80vw', '70vw', '60vw']} alignItems={'center'}>
+              <Heading size={'2xl'} color={`${brandColor}.800`}>
+                  {aboutTitle}
+              </Heading>
+              <Text fontSize={'xl'} color={'gray.500'}>
+                  {aboutText}
+              </Text>
+              <Stack as={'a'} href={instagramLink} target={'_blank'} direction={{ base: 'column', md: 'row' }} spacing={4}>
+                  <Button variant={'outline'} colorScheme={brandColor}>{aboutButtonMessage}</Button>
+              </Stack>
+          </Stack>
+      </Box>
   )
 }
 

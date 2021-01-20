@@ -1,32 +1,32 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import {
   Box,
   Flex,
-  Avatar,
   HStack,
   Link,
-  Text,
-  Button,
   Heading,
   Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
   useDisclosure,
-  Stack
+  Stack, LinkProps
 } from '@chakra-ui/react'
+import { brandColor, brandName } from '../consts'
+import { AiOutlineMenu } from 'react-icons/ai'
 
-const Links = ['Dashboard', 'Projects', 'Team']
+const Links = [
+  { label: 'Sobre', href: '/#sobre' },
+  { label: 'Depoimentos', href: '/#depoimentos' },
+  { label: 'Contato', href: '/#contato' },
+  { label: 'Direito do trânsito', href: '/direito-do-transito' }
+]
 
-const NavLink = ({ children }: { children: ReactNode }) => (
+const NavLink = (props: LinkProps) => (
     <Link
         px={2}
         py={1}
         rounded={'md'}
-        _hover={{ textDecoration: 'none', bg: 'gray.200' }}
-        href={'#'}>
-        {children}
+        _hover={{ textDecoration: 'none', bg: `${brandColor}.700` }}
+        {...props}>
+        {props.children}
     </Link>
 )
 
@@ -34,45 +34,27 @@ const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
-        <Box bg={'gray.200'} px={4}>
+        <Box bg={`${brandColor}.900`} px={4} color={'white'}>
             <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-                <Text
-                    size={'md'}
+                <Box
+                    as={AiOutlineMenu}
                     aria-label={'Open Menu'}
                     display={{ md: !isOpen ? 'none' : 'inherit' }}
                     onClick={isOpen ? onClose : onOpen}
-                >X</Text>
+                >X</Box>
                 <HStack spacing={8} alignItems={'center'}>
-                    <Box><Heading size={'mds'}>DoutorMultas.com</Heading></Box>
-                    <HStack
-                        as={'nav'}
-                        spacing={4}
-                        display={{ base: 'none', md: 'flex' }}>
-                        {Links.map((link) => (
-                            <NavLink key={link}>{link}</NavLink>
-                        ))}
-                    </HStack>
+                    <Box><Heading size={'mds'}>{brandName}</Heading></Box>
                 </HStack>
                 <Flex alignItems={'center'}>
                     <Menu>
-                        <MenuButton
-                            as={Button}
-                            rounded={'full'}
-                            variant={'link'}
-                            cursor={'pointer'}>
-                            <Avatar
-                                size={'sm'}
-                                src={
-                                    'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
-                                }
-                            />
-                        </MenuButton>
-                        <MenuList>
-                            <MenuItem>Link 1</MenuItem>
-                            <MenuItem>Link 2</MenuItem>
-                            <MenuDivider/>
-                            <MenuItem>Link 3</MenuItem>
-                        </MenuList>
+                        <HStack
+                            as={'nav'}
+                            spacing={8}
+                            display={{ base: 'none', md: 'flex' }}>
+                            {Links.map((link) => (
+                                <NavLink key={link.label} href={link.href}>{link.label}</NavLink>
+                            ))}
+                        </HStack>
                     </Menu>
                 </Flex>
             </Flex>
@@ -82,7 +64,7 @@ const Header = () => {
                     <Box pb={4}>
                         <Stack as={'nav'} spacing={4}>
                             {Links.map((link) => (
-                                <NavLink key={link}>{link}</NavLink>
+                                <NavLink key={link.label} href={link.href}>{link.label}</NavLink>
                             ))}
                         </Stack>
                     </Box>
