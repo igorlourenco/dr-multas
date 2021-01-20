@@ -24,7 +24,7 @@ export const aboutText = 'Lorem ipsum dolor sit amet, consetetur sadipscing elit
     '                        erat, sed diam voluptua. At vero eos et accusam et justo duo dolores\n' +
     '                        et ea rebum.'
 
-export const author = 'Hans FLick'
+export const author = 'Hans Flick'
 export const deposition = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam\n' +
     '                        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam\n' +
     '                        erat, sed diam voluptua. At vero eos et accusam et justo duo dolores\n' +
@@ -37,3 +37,5 @@ export const instagramLink = 'https://instagram.com/doutormultas_to'
 export const whatsappLink = 'https://wa.me/5563991139344'
 
 export const siteLink = 'https://dr-multas.vercel.app'
+
+export const transitLawText = 'O Direito de Trânsito é formado pelo conjunto de Leis, Decretos e demais normas que regulam e disciplinam as diversas modalidades de uso de veículos nas vias públicas, e até mesmo o tráfego de pessoas e animais, tudo na conformidade do que disciplina o Código de Trânsito Brasileiro.'

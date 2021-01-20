@@ -8,7 +8,12 @@ import {
   Stack,
   useBreakpointValue
 } from '@chakra-ui/react'
-import { brandColor, brandColorHex, mainSectionButtonMessage, mainSectionImage, mainSectionText } from '../consts'
+import {
+  brandColor,
+  brandColorHex,
+  mainSectionImage,
+  transitLawText, whatsappLink
+} from '../consts'
 import { IoMdArrowRoundForward } from 'react-icons/io'
 import { convertHexToRGBA } from '../helpers'
 import Header from '../components/Header'
@@ -39,21 +44,19 @@ const TransitLaw = () => {
                     justifyContent={'center'}
                     spacing={6}
                     px={heroTextPaddingX}
-                    bg={
-                        `linear-gradient(0.25turn, ${convertHexToRGBA(brandColorHex, 20)}, rgba(0,0,0,0))`
-                    }>
+                    bg={convertHexToRGBA('#000', 60)}>
                     <Box maxW={{ base: 'sm', sm: 'md', md: 'lg' }}>
                         <Text
                             color={'white'}
                             fontWeight={700}
                             lineHeight={1.2}
                             fontSize={heroTextSize}>
-                            {mainSectionText}
+                            {transitLawText}
                         </Text>
                     </Box>
-                    <Button colorScheme={brandColor} rightIcon={<Box as={IoMdArrowRoundForward}/>} size={ctaSize}
+                    <Button as={'a'} href={whatsappLink} target={'_blank'} colorScheme={brandColor} rightIcon={<Box as={IoMdArrowRoundForward}/>} size={ctaSize}
                             borderRadius={'2xl'}>
-                        {mainSectionButtonMessage}
+                        Consultar o Doutor Multas
                     </Button>
                 </Stack>
             </Box>

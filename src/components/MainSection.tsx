@@ -8,7 +8,14 @@ import {
   Stack,
   useBreakpointValue
 } from '@chakra-ui/react'
-import { brandColor, brandColorHex, mainSectionButtonMessage, mainSectionImage, mainSectionText } from '../consts'
+import {
+  brandColor,
+  brandColorHex,
+  mainSectionButtonMessage,
+  mainSectionImage,
+  mainSectionText,
+  whatsappLink
+} from '../consts'
 import { IoMdArrowRoundForward } from 'react-icons/io'
 import { convertHexToRGBA } from '../helpers'
 
@@ -35,9 +42,7 @@ const MainSection = () => {
                 justifyContent={'center'}
                 spacing={6}
                 px={heroTextPaddingX}
-                bg={
-                    `linear-gradient(0.25turn, ${convertHexToRGBA(brandColorHex, 20)}, rgba(0,0,0,0))`
-                }>
+                bg={convertHexToRGBA(brandColorHex, 20)}>
                 <Box maxW={{ base: 'sm', sm: 'md', md: 'lg' }}>
                     <Text
                         color={'white'}
@@ -47,7 +52,7 @@ const MainSection = () => {
                         {mainSectionText}
                     </Text>
                 </Box>
-                <Button colorScheme={brandColor} rightIcon={<Box as={IoMdArrowRoundForward}/>} size={ctaSize}
+                <Button colorScheme={brandColor} as={'a'} href={whatsappLink} target={'_blank'} rightIcon={<Box as={IoMdArrowRoundForward}/>} size={ctaSize}
                         borderRadius={'2xl'}>
                     {mainSectionButtonMessage}
                 </Button>

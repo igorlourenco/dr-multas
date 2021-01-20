@@ -6,10 +6,10 @@ const Footer = () => {
   return (
         <Box p={4} backgroundColor={`${brandColor}.800`} color={'white'}>
             <SimpleGrid columns={{ base: 1, md: 3 }} display={'flex'}
-                        flexDirection={['column-reverse', 'column-reverse', 'row', 'row']} spacing={10}
+                        flexDirection={['column', 'column', 'row', 'row']} spacing={10}
                         alignItems={'center'}>
 
-                <Stack>
+                <Stack display={['none', 'none', 'block', 'block']}>
                     <Image src={'/DoutorMultas.png'} width={['200px', '200px', '500px', '500px']}/>
                 </Stack>
 
@@ -20,7 +20,7 @@ const Footer = () => {
             <Stack width={'100%'}>
                 <Link fontWeight={'bold'} href={siteLink}>&copy; 2021 {brandName}</Link>
                 <Text fontWeight={'medium'}>
-                    63 99104 7668
+                    63 9 9113 9344
                 </Text>
                 <Text fontWeight={'medium'}>
                     Rua 22, Quadra 214, Lote 12 - 103 Norte

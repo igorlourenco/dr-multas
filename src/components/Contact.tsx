@@ -7,7 +7,7 @@ import {
   Text,
   useBreakpointValue, Stack, BoxProps
 } from '@chakra-ui/react'
-import { brandColorHex, contactImage, contactText, instagramLink, whatsappLink } from '../consts'
+import { contactImage, contactText, instagramLink, whatsappLink } from '../consts'
 import { convertHexToRGBA } from '../helpers'
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa'
 
@@ -36,12 +36,10 @@ const Contact = (props: BoxProps) => {
                 alignItems={'center'}
                 spacing={6}
                 px={heroTextPaddingX}
-                bg={
-                    `linear-gradient(0.25turn, ${convertHexToRGBA(brandColorHex, 20)}, rgba(0,0,0,0))`
-                }>
+                bg={convertHexToRGBA('#000', 60)}>
                 <Box>
                     <Text
-                        color={'#333'}
+                        color={'white'}
                         fontWeight={700}
                         lineHeight={1.2}
                         fontSize={heroTextSize}>
@@ -63,7 +61,7 @@ const Contact = (props: BoxProps) => {
                         <Button backgroundColor={'#128c7e'} color={'white'} _hover={{ backgroundColor: '#25d366' }}
                                 leftIcon={<Box as={FaWhatsapp}/>} size={ctaSize}
                                 borderRadius={'2xl'}>
-                            Consultar caso via WhatsApp
+                            Consultar caso por WhatsApp
                         </Button>
                     </Box>
 

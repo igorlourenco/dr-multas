@@ -16,7 +16,7 @@ const Links = [
   { label: 'Sobre', href: '/#sobre' },
   { label: 'Depoimentos', href: '/#depoimentos' },
   { label: 'Contato', href: '/#contato' },
-  { label: 'Direito do trânsito', href: '/direito-do-transito' }
+  { label: 'O que é Direito do trânsito?', href: '/direito-do-transito' }
 ]
 
 const NavLink = (props: LinkProps) => (
